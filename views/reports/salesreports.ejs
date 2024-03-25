@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Help Page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body bgcolor="white">
+    <table bgcolor="white" width="100%">
+        <h1> Sales ReportList </h1>
+        <table>
+            <% if (salesrec.length > 0) {%>
+                <table>
+                    <% salesrec.forEach((recref, index) => { %>
+                        <tr>
+                            <td><%= recref.order_id %></td>
+                            <td><%= recref.customer_id %></td>
+                            <td><%= recref.saledate %></td>
+                            <td><%= recref.customernotes %></td>
+                            <td><%= recref.paymentstatus %></td>
+                            <td><%= recref.authorizationnum %></td>
+                        </tr>
+                        <% }); %>
+                </table>
+                <% } else { %>
+                    <p>Not Records Available</p>
+                <% } %>
+        </table>
+    </table>
+  </body>
+</html>

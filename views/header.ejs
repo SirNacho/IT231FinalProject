@@ -1,0 +1,53 @@
+<table bgcolor='white' width='100%'> <tr>
+        <td width='20%' align='left'>
+            <a href="/"><img src="/images/logo.jpeg" width="70" height="60">
+            </a></td>
+        <td width='50%' align='center' ><h1>Nacho Tech</h1></td>
+        <td width='10%' align='center'>Been at the business since 2024</td>
+    </tr></table>
+
+<ul>
+
+    <p><form action="/search" method="get">
+        Search: <input type="text"
+                       name="searchcriteria">
+        <input type="submit" value="Go">
+    </form></p>
+
+    <% if(session.customer_id > 0) { %>
+    <br> Hello <b> <%= session.custname %>! </b> </br>
+        <li><a href='/customer/logout'>Logout</a></li></br>
+        <li><a href='/customer/profile'>Profile Update</a> </br></li>
+        <li><a href='/customer/pwdchg'>Password Change</a></li>
+        <% } else { %>
+            <li><a href='/customer/register'>New Customer</a> </br></li>
+            <li><a href='/customer/login'>Login</a></li>
+        <% } %>
+
+
+        <li> <a href="/">Home</a> </li>
+        <li><a href="/catalog">Catalog</a></li>
+        <li> <a href="/about">About Us</a> </li>
+        <li> <a href="/contact">Contact Us</a> </li>
+        <li> <a href="/privacy">Privacy</a> </li>
+        <li> <a href="/help">Help</a> </li>
+
+</ul>
+
+<% if(session.isadmin) { %>
+             <div class="dropdown">
+                 <button class="dropbtn">Admin Pages</button>
+                 <div class="dropdown-content">
+                     <a href="/product">Product</a>
+                     <a href="/saleorder">Sale Order</a>
+                     <a href="/customer">Customer</a>
+                     <a href="/category">Category</a>
+                     <a href="/orderdetail">Order Detail</a>
+                     <a href="/review">Review</a>
+                     <a href="/subscription">Subscription</a>
+                     <a href="/package">Package</a>
+                     <a href="/promotion">Promotion</a>
+                     <a href="/reports">Reports</a>
+                 </div>
+             </div>
+        <% } %>

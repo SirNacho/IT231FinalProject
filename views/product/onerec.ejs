@@ -1,0 +1,46 @@
+<h1> Details </h1>
+<table>
+	<tr> <td> Product ID: </td> <td> <%= onerec.product_id %> </td> </tr>
+	<tr> <td> Product Name: </td> <td> <%= onerec.productname %> </td> </tr>
+	<tr> <td> Image: </td> <td> <%= onerec.prodimage %> </td> </tr>
+	<tr> <td> Description: </td> <td> <%= onerec.description %> </td> </tr>
+	<tr> <td> Ingredients: </td> <td> <%= onerec.ingredients %> </td> </tr>
+	<tr> <td> Weight: </td> <td> <%= onerec.weightdetail %> </td> </tr>
+	<tr> <td> Health Info: </td> <td> <%= onerec.healthwarn %> </td> </tr>
+	<tr> <td> Color: </td> <td> <%= onerec.prodcolor %> </td> </tr>
+	<tr> <td> Package Type: </td> <td> <%= onerec.package_id %> </td> </tr>
+	<tr> <td> Category Type: </td> <td> <%= onerec.category_id %> </td> </tr>
+	<tr> <td> Sale Price: </td> <td> <%= onerec.saleprice %> </td> </tr>
+	<tr> <td> Status: </td> <td> <%= onerec.status %> </td> </tr>
+	<tr> <td> Homepage?: </td> <td> <%= onerec.homepage %> </td> </tr>
+</table>
+<form action="/review/submit" method="post">
+	<input type="hidden" name="product_id" value="<%= onerec.product_id %>">
+	<input type="submit" class="reviewbutton" value="Submit Review">
+</form>
+
+<form action="/catalog/add" method="post" >
+	<input type="hidden" name="product_id" value=<%= onerec.product_id %> >
+	Quantity: <select name="qty" required>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+	  </select>
+	  <button type="submit" class="button1">Add to Cart</button>
+</form>
+<hr>
+<h2>Customer Reviews</h2>
+<table>
+	<tr>
+		<th>Comments</th>
+		<th>Rating</th>
+	</tr>
+<% reviews.forEach((recref, index) => { %>
+	<tr>
+		<td><%= recref.comments %></td>
+		<td><%= recref.rating %></td>
+	</tr>
+<% }); %>
+</table>

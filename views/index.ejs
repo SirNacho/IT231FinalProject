@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<h1><%= title %></h1>
+    <h2>Hello!</h2>
+    <img src="/images/logo.jpeg" width="200" height="200">
+    <p>Welcome to <%= title %></p>
+    <p1>If you're curious on the different static pages. <br>Check out the hyperlinks to got to different pages. </p1>
+    <p1>
+      <br><a href="/about">Go to the about page.</a>
+      <br><a href="/contact">Go to the contact page.</a>
+    </p1>
+    </table>
+    <h2> Details of our product line:</h2>
+      <% if (allrecs.length > 0) {%>
+          <% allrecs.forEach((recref, index) => { %>
+              <product>
+                  <table>
+                      <tr> <td colspan="2"><img src="/images/<%= recref.prodimage %>" width="150" height="125"></td></tr>
+                      <tr> <td colspan="2"><%= recref.prodimage %></td></tr>
+                      <tr> <td colspan="2"><%= recref.description %></td></tr>
+                      <tr> <td><%= recref.package_id %> </td> <td><%=
+                                  recref.category_id %></td> </tr>
+                      <tr> <td><%= recref.prodcolor %></td> <td><%= recref.saleprice %></td></tr>
+                      <tr> <td><%= recref.status %></td>
+                          <td><a href='/product/<%= recref.product_id %>/show'>Details</a></td></tr>
+                      </td>
+                  </table>
+        </product>
+        <% }); %>
+      <% } %>
+</td>
+<div style="clear:both;"></div>
+<h2 >Advertisements:</h2>
+
+<table>
+    <td width="20%">
+        <% if (promos.length > 0) {%>
+            <% promos.forEach((recref, index) => { %>
+                <table align="left">
+                    <tr> <td colspan="2"> <%= recref.promotitle %></td></tr>
+                    <td colspan="2"><img src="/images/<%= recref.promoimage %>" width="200" height="200"></td>
+                     <tr> <td colspan="2"> <%= recref.promoimage %></td></tr>
+                </table>
+                <% }); %>
+        <% } %>
+</table>
+<div style="clear:both;"></div>

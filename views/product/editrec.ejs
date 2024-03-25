@@ -1,0 +1,40 @@
+
+<html>
+  <head>
+    <title>Help Page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body bgcolor="white">
+    <table bgcolor="white" width="100%">
+        <table>
+            <h1> Edit Product</h1>
+            <form action="/product/save" method="post">
+                <input type="hidden" name="product_id" value="<%= onerec.product_id %>" >
+                <table>
+                    <tr> <td> Product Name: </td> <td> <input type="text" name="productname" value="<%= onerec.productname %>" required> </td> </tr>
+                    <tr> <td> Image: </td> <td> <input type="text" name="prodimage" value="<%= onerec.prodimage %>" required> </td> </tr>
+                    <tr> <td> Description: </td> <td> <textarea name="description" rows="10" cols="30"><%= onerec.description %></textarea> </td>
+                    </tr>
+                    <tr> <td> Ingredients: </td> <td> <textarea name="ingredients" rows="10" cols="30"><%= onerec.ingredients %></textarea> </td>
+                    </tr>
+                    <tr> <td> Weight Detail: </td> <td> <textarea name="weightdetail" rows="10" cols="30"><%= onerec.weightdetail %></textarea> </td>
+                    </tr>
+                    <tr> <td> Health warn: </td> <td> <textarea name="healthwarn" rows="10" cols="30"><%= onerec.healthwarn %></textarea> </td> </tr>
+                    <tr> <td> Color: </td> <td> <input type="text" name="prodcolor" value="<%= onerec.prodcolor %>" required> </td> </tr>
+                    <tr> <td> Package: </td> <td> <input type="number" name="package_id" value="<%= onerec.package_id %>" required> </td> </tr>
+                    <tr> <td> Category: </td> <td> <input type="number" name="category_id" value="<%= onerec.category_id %>" required> </td> </tr>
+                    <tr> <td> Price: </td> <td> <input type="text" name="saleprice" value="<%= onerec.saleprice %>" required> </td> </tr>
+                    <tr> <td> Status: </td> <td> <select name="status" required>
+                                <option selected disabled>Choose Status</option>
+                                <option>Available</option>
+                                <option>Limited</option>
+                                <option>SoldOut</option>
+                            </select> </td> </tr>
+                    <tr> <td> Homepage: </td> <td> <input type="number" name="homepage" value="<%= onerec.homepage %>" required> </td> </tr>
+                </table>
+                <button type="submit">Save</button>
+            </form>
+        </table>
+    </table>
+  </body>
+</html>

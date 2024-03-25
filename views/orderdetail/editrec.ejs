@@ -1,0 +1,11 @@
+<h1>Edit</h1>
+<form action="/orderdetail/save" method="post">
+   <input type="hidden" name="orderdetail_id" value="<%= onerec.orderdetail_id %>" >
+<table>
+	<tr> <td> Order ID: </td> <td> <input type="number" name="order_id" value="<%= onerec.order_id %>" required> </td> </tr>
+	<tr> <td> Product ID: </td> <td> <input type="number" name="product_id" value="<%= onerec.product_id %>" required> </td> </tr>
+	<tr> <td> Sale Price: </td> <td> <input type="text" name="saleprice" value="<%= onerec.saleprice %>" required> </td> </tr>
+	<tr> <td> Quantity: </td> <td> <input type="number" name="qty" value="<%= onerec.qty %>" required> </td> </tr>
+</table>
+<button type="submit">Save</button>
+</form>

@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Help Page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body bgcolor="white">
+    <table bgcolor="white" width="100%">
+        <h1> Customer ReportList </h1>
+        <table>
+            <% if (customerrecs.length > 0) {%>
+                <table>
+                    <% customerrecs.forEach((recref, index) => { %>
+                        <tr>
+                            <td><%= recref.customer_id %></td>
+                            <td><%= recref.firstname %></td>
+                            <td><%= recref.lastname %></td>
+                            <td><%= recref.email %></td>
+                            <td><%= recref.phone %></td>
+                            <td><%= recref.address1 %></td>
+                            <td><%= recref.address2 %></td>
+                            <td><%= recref.city %></td>
+                            <td><%= recref.state %></td>
+                            <td><%= recref.zip %></td>
+                            <td><%= recref.username %></td>
+                            <td><%= recref.password %></td>
+                        </tr>
+                        <% }); %>
+                </table>
+                <% } else { %>
+                    <p>Not Records Available</p>
+                <% } %>
+        </table>
+    </table>
+  </body>
+</html>

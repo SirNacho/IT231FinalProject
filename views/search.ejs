@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Help Page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body bgcolor="white">
+    <table bgcolor="white" width="100%">
+      <h1>Search</h1>
+<% if (allrecs.length > 0)   {%>
+<table><tr>
+        <th> Product Name</th>
+        <th> Color </th>
+        <th> Package </th>
+        <th> Sale Price </th>
+        <th> Status </th>
+        <th> See Details </th>
+    </tr>
+    <% allrecs.forEach((recref, index) => { %>
+    <tr>
+        <td><%= recref.productname %></td>
+        <td><%= recref.prodcolor %></td>
+        <td><%= recref.package_id %></td>
+        <td><%= recref.category_id %></td>
+        <td><%= recref.saleprice %></td>
+        <td><%= recref.status %></td>
+        <td><a href='/product/<%= recref.product_id %>/show'>Details</a></td>
+    </tr>
+    <% }); %>
+        </table>
+    <% } else { %>
+        <p>No Record was found :(</p>
+    <% } %>
+    </table>
+  </body>
+</html>

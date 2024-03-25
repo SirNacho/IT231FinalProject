@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Help Page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body bgcolor="white">
+    <table bgcolor="white" width="100%">
+        <h1> Product ReportList </h1>
+        <table>
+            <% if (productrecs.length > 0) {%>
+                <table>
+                    <% productrecs.forEach((recref, index) => { %>
+                        <tr>
+                            <td><%= recref.product_id %></td>
+                            <td><%= recref.productname %></td>
+                            <td><%= recref.prodimage %></td>
+                            <td><%= recref.description %></td>
+                            <td><%= recref.ingredients %></td>
+                            <td><%= recref.weightdetail %></td>
+                            <td><%= recref.healthwarn %></td>
+                            <td><%= recref.prodcolor %></td>
+                            <td><%= recref.package_id %></td>
+                            <td><%= recref.category_id %></td>
+                            <td><b>Price: <%= Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(recref.saleprice) %> </b> <br/></td>
+                            <td><%= recref.status %></td>
+                            <td><%= recref.homepage %></td>
+                        </tr>
+                        <% }); %>
+                </table>
+                <% } else { %>
+                    <p>Not Records Available</p>
+                <% } %>
+        </table>
+    </table>
+  </body>
+</html>

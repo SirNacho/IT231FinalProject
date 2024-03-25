@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Help Page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body bgcolor="white">
+    <table bgcolor="white" width="100%">
+        <p><%= message %></p>
+        <form action="/customer/login" method="post" >
+            <p>Username: <input type="text" name="username" required> </p>
+            <p>Password: <input type="password" name="password" required> </p>
+            <button type="submit">Login</button>
+        </form>
+    </table>
+  </body>
+</html>
